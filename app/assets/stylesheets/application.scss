@@ -10,7 +10,44 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-
-
+ *= require_tree .
+ *= require_self
  */
 
+
+html, html body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: url('/assets/bg.jpg') repeat;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, ul, li, div {
+	font-family: "Lato", sans-serif;
+}
+
+#header {
+	position: relative;
+	z-index: 10000;
+	width: 100%;
+
+	.header-bg {
+		width: 100%;
+		display: block;
+	}
+
+}
+
+#footer {
+	margin-top: -3em;
+	padding: 4em 0 8em;
+	background: #b30610;
+
+	.copyright {
+
+		p {
+			color: #fff;
+			font-weight: 300;
+		}
+	}
+}

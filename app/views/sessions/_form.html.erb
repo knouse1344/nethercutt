@@ -1,0 +1,9 @@
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username, class: "form-control" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control" %>
+
+  <div class="button-container"><%= f.submit "Sign in", class: "save button" %></div>
+<% end %>

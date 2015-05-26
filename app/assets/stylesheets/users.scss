@@ -1,3 +1,15 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#signup {
+	width: 100%;
+	position: relative;
+	z-index: 500;
+
+	.edit-container {
+		padding: 9em 0;
+		background: #fefcec;
+	}
+}

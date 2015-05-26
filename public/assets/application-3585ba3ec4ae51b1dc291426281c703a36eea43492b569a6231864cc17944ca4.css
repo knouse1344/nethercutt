@@ -1,0 +1,101 @@
+/* line 7, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+#index {
+  position: relative;
+  z-index: 500;
+}
+/* line 11, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+#index .fill {
+  padding: 3em 0 7em;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.35);
+  background: #fefcec;
+}
+/* line 17, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+#index .welcome {
+  padding-top: 3em;
+  padding-bottom: 5em;
+  border-bottom: 1px solid #ccc;
+}
+/* line 23, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+#index .begin-container {
+  text-align: center;
+  padding-top: 6em;
+}
+/* line 27, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+#index .begin-container .begin {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: .5em 1.5em;
+  color: #fefcec;
+  font-size: 2em;
+  font-weight: 700;
+  background: #053267;
+}
+/* line 39, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+#index .begin-container .begin:hover {
+  opacity: .5;
+}
+/* line 6, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
+#signup {
+  width: 100%;
+  position: relative;
+  z-index: 500;
+}
+/* line 11, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
+#signup .edit-container {
+  padding: 9em 0;
+  background: #fefcec;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+/* line 19, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/application.scss */
+html, html body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("/assets/bg.jpg") repeat;
+}
+
+/* line 26, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/application.scss */
+h1, h2, h3, h4, h5, h6, p, span, a, ul, li, div {
+  font-family: "Lato", sans-serif;
+}
+
+/* line 30, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/application.scss */
+#header {
+  position: relative;
+  z-index: 10000;
+  width: 100%;
+}
+/* line 35, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/application.scss */
+#header .header-bg {
+  width: 100%;
+  display: block;
+}
+
+/* line 42, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/application.scss */
+#footer {
+  margin-top: -3em;
+  padding: 4em 0 8em;
+  position: relative;
+  z-index: 1;
+  background: #b30610;
+}
+/* line 51, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/application.scss */
+#footer .copyright p {
+  color: #fff;
+  font-weight: 300;
+}

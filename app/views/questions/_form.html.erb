@@ -1,0 +1,51 @@
+<%= form_for(@question) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<div class="row">
+		<div class="col-md-12">
+			<%= f.label :question %>
+			<%= f.text_field :question, class: "form-control" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<%= f.label :answer_a %>
+			<%= f.text_field :answer_a, class: "form-control" %>
+		</div>
+		<div class="col-md-3">
+			<%= f.label :answer_b %>
+			<%= f.text_field :answer_b, class: "form-control" %>
+		</div>
+		<div class="col-md-3">
+			<%= f.label :answer_c %>
+			<%= f.text_field :answer_c, class: "form-control" %>
+		</div>
+		<div class="col-md-3">
+			<%= f.label :answer_d %>
+			<%= f.text_field :answer_d, class: "form-control" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<%= f.collection_select(:answer_correct, @correctArray, :to_s, :to_s, {}, { :class => "form-control" }) %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<%= f.label :factoid %>
+			<%= f.text_field :factoid, class: "form-control" %>
+		</div>
+		<div class="col-md-6">
+			<%= f.label :activity %>
+			<%= f.text_field :activity, class: "form-control" %>
+		</div>
+	</div>
+	<div class="button-container row">
+		<div class="col-sm-6">
+			<%= f.submit "Save", class: "save button" %>
+		</div>
+		<div class="col-sm-6">
+			<%= link_to 'Cancel', '/main/index', class: "cancel button" %>
+		</div>
+	</div>
+<% end %>

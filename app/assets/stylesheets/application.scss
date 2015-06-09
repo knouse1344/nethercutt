@@ -36,6 +36,20 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li, div {
 		display: block;
 	}
 
+	.nav {
+		position: absolute;
+		top: 0;
+		right: 15%;
+		background: red;
+
+		a {
+			display: inline-block;
+			padding: .5em 1.5em;
+			color: #fff;
+			
+		}	
+	}
+
 }
 
 #footer {

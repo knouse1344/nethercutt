@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   get 'main/index'
+  get 'main/quiz'
 
   resources :users
+  resources :questions
   resources :sessions, only: [:new, :create, :destroy]
 
   get "sessions/new"

@@ -1,0 +1,43 @@
+<div id="question">
+	<div class="question row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="row">
+				<div class="heading col-sm-12">
+					<h5>Q:</h5><h3><%= question.question %></h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<% if question.answer_correct == "answer_a" %><p class="answer">a. &ensp;<%= question.answer_a %></p><% else %><p>a. &ensp;<%= question.answer_a %></p><% end %>
+					<% if question.answer_correct == "answer_b" %><p class="answer">b. &ensp;<%= question.answer_b %></p><% else %><p>b. &ensp;<%= question.answer_b %></p><% end %>
+					<% if question.answer_correct == "answer_c" %><p class="answer">c. &ensp;<%= question.answer_c %></p><% else %><p>c. &ensp;<%= question.answer_c %></p><% end %>
+					<% if question.answer_correct == "answer_d" %><p class="answer">d. &ensp;<%= question.answer_d %></p><% else %><p>d. &ensp;<%= question.answer_d %></p><% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="answer row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="row">
+				<div class="heading col-sm-12">
+					<h5>A:</h5><h3>The correct answer is:</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<% if question.answer_correct == "answer_a" %>
+						<p class="answer">a. &ensp;<%= question.answer_a %></p>
+					<% elsif question.answer_correct == "answer_b" %></p>
+						<p class="answer">b. &ensp;<%= question.answer_b %></p>
+					<% elsif question.answer_correct == "answer_c" %></p>
+						<p class="answer">c. &ensp;<%= question.answer_c %></p>
+					<% elsif question.answer_correct == "answer_d" %></p>
+						<p class="answer">d. &ensp;<%= question.answer_d %></p>
+					<% end %>
+					<p><%= question.factoid %></p>
+					<p><%= question.activity %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

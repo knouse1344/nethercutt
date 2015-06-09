@@ -1,0 +1,46 @@
+// Place all the styles related to the Question controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#question {
+	width: 100%;
+
+	.heading {
+		margin-top: 9.5em;
+		margin-bottom: 2.5em;
+
+		h3 {
+			width: 80%;
+			display: inline-block;
+			font-size: 1.75em;
+			font-weight: 600;
+			margin-left: 5%;
+			margin: 0;
+			line-height: 1em;
+		}
+
+		h5 {
+			width: 15%;
+			font-size: 4em;
+			font-weight: 600;
+			color: #be0000;
+			margin: 0;
+			display: inline-block;
+		}
+	}
+
+	p {
+		font-size: 1.5em;
+	}
+
+	p.answer {
+		color: #be0000;
+	}
+
+	.question {
+		padding-bottom: 5em;
+		border-bottom: 4px solid #ccc;
+	}
+}

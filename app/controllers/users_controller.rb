@@ -21,6 +21,16 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def calculate(data)
+    @product = Product.find(params[:id])
+    if @product.views == nil
+      @product.views = 1
+    else
+      @product.views += 1
+    end
+    @product.save
+    redirect_to @product.product_url, notice: "Thanks!"
+  end
   # POST /users
   # POST /users.json
   def create
@@ -65,6 +75,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :name, :password, :password_confirmation)
+      params.require(:user).permit(:username, :name, :score, :password, :password_confirmation)
     end
 end

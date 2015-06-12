@@ -48,8 +48,8 @@
 </div>
 
 <script>
-	$(document).ready(function() {
 
+	$(document).ready(function() {
 		var questions = $(".<%= question.id %> .options p");
 		var submit_text = $(".<%= question.id %> .submission .submit p");
 		var answer_a = $(".<%= question.id %> .answer_a");
@@ -59,35 +59,51 @@
 		var submitBtn = $(".<%= question.id %> .submit");
 		var answerSection = $(".<%= question.id %> .answer");
 		var answerContent = $(".<%= question.id %> .answer .content");
+		var answerSelection = "";
+		var answerCorrect = "<%= question.answer_correct %>"
 
 		answer_a.on("click", function() {
 			questions.removeClass("selected")
 			$(".<%= question.id %> .submission .submit p").remove()
 			answer_a.addClass("selected")
+			answerSelection = "answer_a"
 			submitBtn.append("<p>You have selected A.</p>")
 		});
 		answer_b.on("click", function() {
 			questions.removeClass("selected")
 			$(".<%= question.id %> .submission .submit p").remove()
 			answer_b.addClass("selected")
+			answerSelection = "answer_b"
 			submitBtn.append("<p>You have selected B.</p>")
 		});
 		answer_c.on("click", function() {
 			questions.removeClass("selected")
 			$(".<%= question.id %> .submission .submit p").remove()
 			answer_c.addClass("selected")
+			answerSelection = "answer_c"
 			submitBtn.append("<p>You have selected C.</p>")
 		});
 		answer_d.on("click", function() {
 			questions.removeClass("selected")
 			$(".<%= question.id %> .submission .submit p").remove()
 			answer_d.addClass("selected")
+			answerSelection = "answer_d"
 			submitBtn.append("<p>You have selected D.</p>")
 		});
 
 		submitBtn.on("click", function() {
 			answerSection.css({"height": "500px", "opacity": "1"})
 			answerContent.css({"height": "500px"})
+
+			if (answerSelection == answerCorrect) {
+				console.log("Correct!")
+				score += 1
+				
+			} else {
+				console.log("Incorrect!")
+				console.log(answerSelection)
+				console.log(answerCorrect)
+			}
 		});
 	});
 </script>

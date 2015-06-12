@@ -1,12 +1,17 @@
 class User < ActiveRecord::Base
-	attr_accessible :username, :name, :password, :password_confirmation
+	attr_accessible :username, :name, :score, :password, :password_confirmation
 	has_secure_password
 
 	before_save { self.username = username.downcase }
 	before_create :create_remember_token
+	before_create :set_score
 	validates :username, presence: true, uniqueness: true
 	validates :password, length: { minimum: 5 }
 	validates :password_confirmation, presence: true
+
+	def set_score
+		self.score = 0
+	end
 
 	def User.new_remember_token
 	SecureRandom.urlsafe_base64

@@ -1,4 +1,4 @@
-<div id="question">
+<div id="question" class="<%= question.id %>">
 	<div class="question row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="row">
@@ -7,17 +7,22 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
-					<% if question.answer_correct == "answer_a" %><p class="answer">a. &ensp;<%= question.answer_a %></p><% else %><p>a. &ensp;<%= question.answer_a %></p><% end %>
-					<% if question.answer_correct == "answer_b" %><p class="answer">b. &ensp;<%= question.answer_b %></p><% else %><p>b. &ensp;<%= question.answer_b %></p><% end %>
-					<% if question.answer_correct == "answer_c" %><p class="answer">c. &ensp;<%= question.answer_c %></p><% else %><p>c. &ensp;<%= question.answer_c %></p><% end %>
-					<% if question.answer_correct == "answer_d" %><p class="answer">d. &ensp;<%= question.answer_d %></p><% else %><p>d. &ensp;<%= question.answer_d %></p><% end %>
+				<div class="options col-sm-8 col-sm-offset-2">
+					<p class="answer_a">a. &ensp;<%= question.answer_a %></p>
+					<p class="answer_b">b. &ensp;<%= question.answer_b %></p>
+					<p class="answer_c">c. &ensp;<%= question.answer_c %></p>
+					<p class="answer_d">d. &ensp;<%= question.answer_d %></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="submission col-sm-4 col-sm-offset-4">
+					<p class="submit">Submit Answer</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="answer row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="content col-md-8 col-md-offset-2">
 			<div class="row">
 				<div class="heading col-sm-12">
 					<h5>A:</h5><h3>The correct answer is:</h3>
@@ -26,13 +31,13 @@
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
 					<% if question.answer_correct == "answer_a" %>
-						<p class="answer">a. &ensp;<%= question.answer_a %></p>
+						<p class="option">a. &ensp;<%= question.answer_a %></p>
 					<% elsif question.answer_correct == "answer_b" %></p>
-						<p class="answer">b. &ensp;<%= question.answer_b %></p>
+						<p class="option">b. &ensp;<%= question.answer_b %></p>
 					<% elsif question.answer_correct == "answer_c" %></p>
-						<p class="answer">c. &ensp;<%= question.answer_c %></p>
+						<p class="option">c. &ensp;<%= question.answer_c %></p>
 					<% elsif question.answer_correct == "answer_d" %></p>
-						<p class="answer">d. &ensp;<%= question.answer_d %></p>
+						<p class="option">d. &ensp;<%= question.answer_d %></p>
 					<% end %>
 					<p><%= question.factoid %></p>
 					<p><%= question.activity %></p>
@@ -41,3 +46,48 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$(document).ready(function() {
+
+		var questions = $(".<%= question.id %> .options p");
+		var submit_text = $(".<%= question.id %> .submission .submit p");
+		var answer_a = $(".<%= question.id %> .answer_a");
+		var answer_b = $(".<%= question.id %> .answer_b");
+		var answer_c = $(".<%= question.id %> .answer_c");
+		var answer_d = $(".<%= question.id %> .answer_d");
+		var submitBtn = $(".<%= question.id %> .submit");
+		var answerSection = $(".<%= question.id %> .answer");
+		var answerContent = $(".<%= question.id %> .answer .content");
+
+		answer_a.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= question.id %> .submission .submit p").remove()
+			answer_a.addClass("selected")
+			submitBtn.append("<p>You have selected A.</p>")
+		});
+		answer_b.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= question.id %> .submission .submit p").remove()
+			answer_b.addClass("selected")
+			submitBtn.append("<p>You have selected B.</p>")
+		});
+		answer_c.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= question.id %> .submission .submit p").remove()
+			answer_c.addClass("selected")
+			submitBtn.append("<p>You have selected C.</p>")
+		});
+		answer_d.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= question.id %> .submission .submit p").remove()
+			answer_d.addClass("selected")
+			submitBtn.append("<p>You have selected D.</p>")
+		});
+
+		submitBtn.on("click", function() {
+			answerSection.css({"height": "500px", "opacity": "1"})
+			answerContent.css({"height": "500px"})
+		});
+	});
+</script>

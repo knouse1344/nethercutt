@@ -12,4 +12,25 @@
 		padding: 9em 0;
 		background: #fefcec;
 	}
+
+	.button-container {
+		padding: 1em 0;
+
+		.button {
+			width: 100%;
+			text-decoration: none;
+			display: inline-block;
+			text-align: center;
+			padding: .25em 1.5em;
+			color: #f3dfb0;
+			font-size: 1.25em;
+			font-weight: 700;
+			background: #053267;
+			border: 2px solid #5484a2;
+		}
+
+		.button:hover {
+			background: #2F5E96;
+		}
+	}
 }

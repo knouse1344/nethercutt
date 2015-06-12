@@ -1,4 +1,6 @@
 class MainController < ApplicationController
+  before_action :signed_in_user, only: [:quiz]
+  
   def index
   end
 

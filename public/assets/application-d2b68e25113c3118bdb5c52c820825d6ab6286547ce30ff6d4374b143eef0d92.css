@@ -68,15 +68,15 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 }
 
 /* line 70, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
-#quiz .end {
+#quiz .end, #question .end {
   text-align: center;
   padding-top: 5em;
 }
 /* line 74, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
-#quiz .end a {
+#quiz .end a, #question .end a {
   display: inline-block;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   text-align: center;
   padding: .5em 1.5em;
   color: #f3dfb0;
@@ -85,14 +85,18 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   background: #053267;
   border: 3px solid #5484a2;
 }
+/* line 87, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+#quiz .end a:hover, #question .end a:hover {
+  background: #2F5E96;
+}
 
-/* line 91, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+/* line 95, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
 #scorecard h3 {
   color: #990000;
   font-size: 2em;
   text-align: center;
 }
-/* line 96, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+/* line 100, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
 #scorecard h3 span {
   text-align: center;
   font-size: 1.5em;
@@ -100,7 +104,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   font-weight: 900;
   color: #000;
 }
-/* line 105, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+/* line 109, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
 #scorecard h1 {
   text-align: center;
   font-size: 3em;
@@ -108,22 +112,22 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   font-weight: 700;
   color: #000;
 }
-/* line 113, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+/* line 117, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
 #scorecard .ribbon {
   display: block;
   text-align: center;
 }
-/* line 117, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+/* line 121, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
 #scorecard .ribbon img {
   display: inline-block;
 }
-/* line 122, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+/* line 126, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
 #scorecard .review {
   position: relative;
   background: #fefcec;
   padding-bottom: 4em;
 }
-/* line 128, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
+/* line 132, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/main.scss */
 #scorecard .review:after {
   content: "";
   position: absolute;
@@ -145,15 +149,15 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 }
 /* line 11, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .heading {
-  margin-top: 9.5em;
-  margin-bottom: 2.5em;
+  margin-top: 3em;
+  margin-bottom: 5em;
 }
 /* line 15, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .heading h3 {
   width: 80%;
   display: inline-block;
   font-size: 2em;
-  font-weight: 600;
+  font-weight: 900;
   padding-top: 1em;
   margin-left: 5%;
   margin: 0;
@@ -164,7 +168,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 #question .heading h5 {
   width: 15%;
   font-size: 4em;
-  font-weight: 600;
+  font-weight: 900;
   color: #be0000;
   margin: 0;
   display: inline-block;
@@ -184,7 +188,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 /* line 49, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .submission {
   padding-top: 2em;
-  padding-bottom: 2em;
+  padding-bottom: 5em;
 }
 /* line 53, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .submission .submit {
@@ -194,9 +198,9 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   display: inline-block;
   text-align: center;
   padding: .25em 1.5em;
-  color: #f3dfb0;
+  color: #fdfbea;
   font-size: 1.25em;
-  font-weight: 700;
+  font-weight: 300;
   background: #053267;
   border: 2px solid #5484a2;
 }
@@ -205,26 +209,30 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   font-size: 1em;
   margin: 0;
 }
-/* line 73, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+/* line 72, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .submission .submit:hover {
+  background: #2F5E96;
+}
+/* line 77, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .question {
   position: relative;
 }
-/* line 76, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
-#question .question .row {
+/* line 80, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .question > .row {
   position: relative;
   background: #fefcec;
   z-index: 50;
 }
-/* line 84, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+/* line 88, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .question .options p {
   cursor: pointer;
   padding: .25em 1.25em;
 }
-/* line 89, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+/* line 93, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .question .options p:hover {
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 94, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+/* line 98, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .question .arrow-down {
   position: absolute;
   z-index: 25;
@@ -238,8 +246,8 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   background-size: contain;
   background-position: center;
 }
-/* line 110, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
-#question .question:after {
+/* line 114, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .question .shadow {
   content: "";
   position: absolute;
   left: 0;
@@ -253,40 +261,81 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   box-shadow: 0 0 6px #c3b387;
   z-index: 1;
 }
-/* line 125, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
-#question .answer {
+/* line 129, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .solution-box {
   position: relative;
   height: 0px;
   opacity: 0;
-  background: #fcf6e2;
+  background: #fefcec;
+  transition: all .15s;
+  -moz-transition: all .15s;
+  -ms-transition: all .15s;
+  -webkit-transition: all .15s;
+}
+/* line 140, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .answer {
+  position: relative;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 25;
   transition: all .5s;
   -moz-transition: all .5s;
   -ms-transition: all .5s;
   -webkit-transition: all .5s;
 }
-/* line 135, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+/* line 151, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .answer .row {
+  position: relative;
+  background: #fcf6e2;
+  z-index: 50;
+}
+/* line 157, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
 #question .answer .content {
   overflow: hidden;
-  height: 0px;
+  padding-bottom: 5em;
+}
+/* line 161, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .answer .content .heading {
+  margin-bottom: 0;
+}
+/* line 165, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .answer .content .result {
+  color: #990000;
+  margin: .75em 0;
+}
+/* line 172, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .baseplate {
+  position: relative;
+  z-index: 25;
+  width: 100%;
+}
+/* line 177, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .baseplate img {
+  display: block;
+  width: 100%;
+}
+/* line 183, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .activity {
+  position: relative;
+  height: 0;
+  opacity: 0;
+  z-index: 10;
+  background: #fefcec;
   transition: all .5s;
   -moz-transition: all .5s;
   -ms-transition: all .5s;
   -webkit-transition: all .5s;
 }
-/* line 147, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
-#question .answer:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 4px;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 10px #c3b387;
-  -moz-box-shadow: 0 0 10px #c3b387;
-  box-shadow: 0 0 10px #c3b387;
-  z-index: 5;
+/* line 194, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .activity h1 {
+  font-weight: 900;
+  margin-bottom: 0;
+}
+/* line 199, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/question.scss */
+#question .activity p.act {
+  padding-top: 0em;
+  padding-bottom: 3em;
 }
 /* line 6, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
 #signup {
@@ -300,19 +349,23 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   background: #fefcec;
 }
 /* line 16, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
+#signup h4 {
+  font-weight: 600;
+}
+/* line 20, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
 #signup .new {
   margin-bottom: 1.5em;
   display: block;
 }
-/* line 21, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
+/* line 25, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
 #signup label {
   margin-top: 1em;
 }
-/* line 25, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
+/* line 29, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
 #signup .button-container {
   padding: 1em 0;
 }
-/* line 28, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
+/* line 32, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
 #signup .button-container .button {
   width: 100%;
   text-decoration: none;
@@ -325,7 +378,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   background: #053267;
   border: 2px solid #5484a2;
 }
-/* line 41, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
+/* line 45, /Users/Bryan/Desktop/projects/nethercutt/app/assets/stylesheets/users.scss */
 #signup .button-container .button:hover {
   background: #2F5E96;
 }

@@ -4,10 +4,10 @@
 			<div class="row">
 				<div class="col-md-offset-2 col-md-8 ">
 					<% if signed_in? %>
-						<h4>You're signed in &ensp; <%= link_to "Log out", signout_path, method: "delete", class: 'login' %></h4>
+						<h4><b>Welcome back <%= @user.name %>!</b> &ensp; <%= link_to "Log out", signout_path, method: "delete", class: 'login' %></h4>
 					<% end %>
 					<p>
-						<b>Welcome...</b>Lorem ipsum dolor sit amet, summo nihil cum ei, est rebum vidisse denique ad, sed no sonet dictas urbanitas. Ludus facilisi mnesarchum ne mea, est inermis consulatu ea. Quando graecis no ius. Probo persius ius et, duo at viderer docendi.
+						Lorem ipsum dolor sit amet, summo nihil cum ei, est rebum vidisse denique ad, sed no sonet dictas urbanitas. Ludus facilisi mnesarchum ne mea, est inermis consulatu ea. Quando graecis no ius. Probo persius ius et, duo at viderer docendi.
 					</p>
 					<p>
 						Usu cu omnesque imperdiet. Ea enim admodum pri. Dolorem qualisque inciderint vis at, utamur detraxit cu has, ex has soleat abhorreant necessitatibus. Dicam oblique labitur ius cu, prima idque indoctum qui in, habeo semper qui at. No mei hinc denique accusamus, dolor conclusionemque in pri. His at aeque inimicus, partem copiosae eleifend duo eu.
@@ -18,7 +18,7 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 begin-container">
-			<a class="begin" href="/main/quiz">Let's Begin!</a>
+			<a class="begin" href="/questions/1">Let's Begin!</a>
 		</div>
 	</div>
 </div>

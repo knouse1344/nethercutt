@@ -1,0 +1,147 @@
+<div id="question" class="<%= @question.id %>">
+	<div class="question">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="row">
+					<div class="heading col-sm-12">
+						<h5>Q:</h5><h3><%= @question.question %></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="options col-sm-8 col-sm-offset-2">
+						<p class="answer_a">a. &ensp;<%= @question.answer_a %></p>
+						<p class="answer_b">b. &ensp;<%= @question.answer_b %></p>
+						<p class="answer_c">c. &ensp;<%= @question.answer_c %></p>
+						<p class="answer_d">d. &ensp;<%= @question.answer_d %></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="submission col-sm-4 col-sm-offset-4">
+						<p class="submit"><em>Click to <span style="text-transform: uppercase; font-weight: 600;">submit</span></em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="solution-box">
+		<div class="row">
+			<div class="answer">
+				<div class="row"><div class="baseplate"><img src="/assets/question_border.png" /></div></div>
+				<div class="row">
+					<div class="content col-md-8 col-md-offset-2">
+						<div class="row">
+							<div class="heading col-sm-12">
+								<div class="row">
+									<div class="col-sm-2"><h5>A:</h5></div>
+									<div class="col-sm-10"><h3>The correct answer is:</h3></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2">
+								<% if @question.answer_correct == "answer_a" %>
+									<p class="result">a. &ensp;<%= @question.answer_a %></p>
+								<% elsif @question.answer_correct == "answer_b" %></p>
+									<p class="result">b. &ensp;<%= @question.answer_b %></p>
+								<% elsif @question.answer_correct == "answer_c" %></p>
+									<p class="result">c. &ensp;<%= @question.answer_c %></p>
+								<% elsif @question.answer_correct == "answer_d" %></p>
+									<p class="result">d. &ensp;<%= @question.answer_d %></p>
+								<% end %>
+								<p><%= @question.factoid %></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="baseplate"><img src="/assets/answer_border.png" /></div>
+			</div>
+		</div>
+		<div class="activity row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1>Activity:</h1>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<p class="act"><%= @question.activity %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="end col-sm-10 col-sm-offset-1">
+			<div class="row">
+				<% if @question.id == 5 %>
+					<div class="col-sm-4 col-sm-offset-4"><a href="/main/scorecard" class="button product-block">That's It!</a></div>
+				<% else %>
+					<div class="col-sm-4 col-sm-offset-4"><a href="/questions/<%= @question.id + 1 %>">Next Question</a></div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	$(document).ready(function() {
+		var questions = $(".<%= @question.id %> .options p");
+		var submit_text = $(".<%= @question.id %> .submission .submit p");
+		var answer_a = $(".<%= @question.id %> .answer_a");
+		var answer_b = $(".<%= @question.id %> .answer_b");
+		var answer_c = $(".<%= @question.id %> .answer_c");
+		var answer_d = $(".<%= @question.id %> .answer_d");
+		var submitBtn = $(".<%= @question.id %> .submit");
+		var solutionSection = $(".<%= @question.id %> .solution-box");
+		var answerSection = $(".<%= @question.id %> .answer");
+		var answerContent = $(".<%= @question.id %> .answer .content");
+		var answerActivity = $(".<%= @question.id %> .activity");
+		var answerSelection = "";
+		var answerCorrect = "<%= @question.answer_correct %>"
+
+		answer_a.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= @question.id %> .submission .submit p").remove()
+			answer_a.addClass("selected")
+			answerSelection = "answer_a"
+			submitBtn.prepend("<p>You have selected <span style='font-weight: 600;'>A.</span></p>")
+		});
+		answer_b.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= @question.id %> .submission .submit p").remove()
+			answer_b.addClass("selected")
+			answerSelection = "answer_b"
+			submitBtn.prepend("<p>You have selected <span style='font-weight: 600;'>B.</span></p>")
+		});
+		answer_c.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= @question.id %> .submission .submit p").remove()
+			answer_c.addClass("selected")
+			answerSelection = "answer_c"
+			submitBtn.prepend("<p>You have selected <span style='font-weight: 600;'>C.</span></p>")
+		});
+		answer_d.on("click", function() {
+			questions.removeClass("selected")
+			$(".<%= @question.id %> .submission .submit p").remove()
+			answer_d.addClass("selected")
+			answerSelection = "answer_d"
+			submitBtn.prepend("<p>You have selected <span style='font-weight: 600;'>D.</span></p>")
+		});
+
+		submitBtn.on("click", function() {
+			solutionSection.css({"height": "auto", "opacity": "1"})
+			answerSection.css({"min-height": "35em", "opacity": "1"})
+			setTimeout(function() {
+				answerActivity.css({"opacity": "1"})
+			}, 500)
+
+			if (answerSelection == answerCorrect) {
+				console.log("Correct!")
+				score += 1
+				
+			} else {
+				console.log("Incorrect!")
+				console.log(answerSelection)
+				console.log(answerCorrect)
+			}
+		});
+	});
+</script>

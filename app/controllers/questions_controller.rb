@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:new, :create, :show, :edit, :update, :destroy]
 
   # GET /Questions
   def index

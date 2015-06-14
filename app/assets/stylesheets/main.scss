@@ -65,7 +65,7 @@
 	}
 }
 
-#quiz {
+#quiz, #question {
 
 	.end {
 		text-align: center;
@@ -74,7 +74,7 @@
 		a {
 			display: inline-block;
 			text-decoration: none;
-			display: inline-block;
+			display: block;
 			text-align: center;
 			padding: .5em 1.5em;
 			color: #f3dfb0;
@@ -82,6 +82,10 @@
 			font-weight: 700;
 			background: #053267;
 			border: 3px solid #5484a2;
+		}
+
+		a:hover {
+			background: #2F5E96;
 		}
 	}
 }

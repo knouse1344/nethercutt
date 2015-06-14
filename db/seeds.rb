@@ -9,7 +9,7 @@
 
 
 User.create([
-	{username: "admin", password: "admin", password_confirmation: "admin"}
+	{username: "admin", name: "Bryan Knouse", password: "admin", password_confirmation: "admin"}
 ])
 
 Question.create([

@@ -1,27 +1,29 @@
 <div id="question" class="<%= question.id %>">
-	<div class="question row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="row">
-				<div class="heading col-sm-12">
-					<h5>Q:</h5><h3><%= question.question %></h3>
+	<div class="question">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="row">
+					<div class="heading col-sm-12">
+						<h5>Q:</h5><h3><%= question.question %></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="options col-sm-8 col-sm-offset-2">
+						<p class="answer_a">a. &ensp;<%= question.answer_a %></p>
+						<p class="answer_b">b. &ensp;<%= question.answer_b %></p>
+						<p class="answer_c">c. &ensp;<%= question.answer_c %></p>
+						<p class="answer_d">d. &ensp;<%= question.answer_d %></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="submission col-sm-4 col-sm-offset-4">
+						<p class="submit">Submit Answer</p>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="options col-sm-8 col-sm-offset-2">
-					<p class="answer_a">a. &ensp;<%= question.answer_a %></p>
-					<p class="answer_b">b. &ensp;<%= question.answer_b %></p>
-					<p class="answer_c">c. &ensp;<%= question.answer_c %></p>
-					<p class="answer_d">d. &ensp;<%= question.answer_d %></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="submission col-sm-4 col-sm-offset-4">
-					<p class="submit">Submit Answer</p>
-				</div>
-			</div>
+			<div class="arrow-down"></div>
+			<div class="shadow"></div>
 		</div>
-		<div class="arrow-down"></div>
-		<div class="shadow"></div>
 	</div>
 	<div class="answer row">
 		<div class="content col-md-8 col-md-offset-2">

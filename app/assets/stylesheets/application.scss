@@ -19,7 +19,8 @@ html, html body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background: url('/assets/bg.jpg') repeat;
+	background: url('/assets/bg.jpg') no-repeat;
+	background-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, a, ul, li, div {

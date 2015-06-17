@@ -111,6 +111,15 @@
 
 	}
 
+	#countdown {
+		font-size: 2.5em;
+		font-weight: 900;
+		font-style: italic;
+		padding-top: .5em;
+		display: inline-block;
+		padding-right: .25em;
+	}
+
 	.question .shadow {
 		content: "";
 		position: absolute;
@@ -135,37 +144,72 @@
 		-moz-transition: all .15s;
 		-ms-transition: all .15s;
 		-webkit-transition: all .15s;
-	}
 
-	.answer {
-		position: relative;
-		height: 0;
-		opacity: 0;
-		overflow: hidden;
-		z-index: 25;
-		transition: all .5s;
-		-moz-transition: all .5s;
-		-ms-transition: all .5s;
-		-webkit-transition: all .5s;
-
-		.row {
+		.answer {
 			position: relative;
-			background: #fcf6e2;
-			z-index: 50;
+			height: 0;
+			opacity: 0;
+			overflow: hidden;
+			z-index: 25;
+			transition: all .5s;
+			-moz-transition: all .5s;
+			-ms-transition: all .5s;
+			-webkit-transition: all .5s;
+
+			.row {
+				position: relative;
+				background: #fcf6e2;
+				z-index: 50;
+			}
+
+			.content {
+				overflow: hidden;
+				padding-bottom: 5em;
+
+				.heading {
+					margin-bottom: 0;
+				}
+
+				.result {
+					color: #990000;
+					margin: .75em 0;
+				}
+			}
 		}
 
-		.content {
-			overflow: hidden;
-			padding-bottom: 5em;
+		.activity {
+			position: relative;
+			height: 0;
+			opacity: 0;
+			z-index: 10;
+			background: #fefcec;
+			transition: all .5s;
+			-moz-transition: all .5s;
+			-ms-transition: all .5s;
+			-webkit-transition: all .5s;
 
-			.heading {
+			h1 {
+				font-weight: 900;
 				margin-bottom: 0;
+				color: #003366;
 			}
 
-			.result {
-				color: #990000;
-				margin: .75em 0;
+			p.act {
+				padding-top: 0em;
+				padding-bottom: 3em;
+				color: #003366;
+				font-style: italic;
 			}
+		}
+	}
+
+	.solution-box.open {
+		height: auto;
+		opacity: 1;
+
+		.answer {
+			min-height: 35em;
+			opacity: 1;
 		}
 	}
 
@@ -177,28 +221,6 @@
 		img {
 			display: block;
 			width: 100%;
-		}
-	}
-
-	.activity {
-		position: relative;
-		height: 0;
-		opacity: 0;
-		z-index: 10;
-		background: #fefcec;
-		transition: all .5s;
-		-moz-transition: all .5s;
-		-ms-transition: all .5s;
-		-webkit-transition: all .5s;
-
-		h1 {
-			font-weight: 900;
-			margin-bottom: 0;
-		}
-
-		p.act {
-			padding-top: 0em;
-			padding-bottom: 3em;
 		}
 	}
 }

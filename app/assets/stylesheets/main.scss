@@ -129,6 +129,36 @@
 		padding-bottom: 4em;
 	}
 
+	.links{
+		padding-top: 4em;
+
+		.link {
+			text-align: center;
+			color: #99844f;
+
+			i {
+				display: block;
+				color: #99844f;
+				font-size: 2em;
+			}
+
+			a {
+				color: #99844f;
+				font-size: 1.5em;
+				text-decoration: none;
+				opacity: 1;
+			}
+
+			a:hover {
+				opacity: .5;
+
+				i {
+					opacity: .5;
+				}
+			}
+		}
+	}
+
 	.review:after {
 		content: "";
 		position: absolute;

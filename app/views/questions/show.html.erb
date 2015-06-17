@@ -19,6 +19,9 @@
 					<div class="submission col-sm-4 col-sm-offset-4">
 						<p class="submit"><em>Click to <span style="text-transform: uppercase; font-weight: 600;">submit</span></em></p>
 					</div>
+					<div class="col-sm-4 counterthing">
+						<div id="countdown">30</div><span>seconds to go</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -96,6 +99,7 @@
 		var answerActivity = $(".<%= @question.id %> .activity");
 		var answerSelection = "";
 		var answerCorrect = "<%= @question.answer_correct %>"
+		var countdownContainer = $(".counterthing")
 
 		answer_a.on("click", function() {
 			questions.removeClass("selected")
@@ -127,8 +131,8 @@
 		});
 
 		submitBtn.on("click", function() {
-			solutionSection.css({"height": "auto", "opacity": "1"})
-			answerSection.css({"min-height": "35em", "opacity": "1"})
+			solutionSection.addClass("open")
+			countdownContainer.remove()
 			setTimeout(function() {
 				answerActivity.css({"opacity": "1"})
 			}, 500)
@@ -136,12 +140,37 @@
 			if (answerSelection == answerCorrect) {
 				console.log("Correct!")
 				score += 1
-				
 			} else {
 				console.log("Incorrect!")
-				console.log(answerSelection)
-				console.log(answerCorrect)
 			}
 		});
+
+		var seconds;
+		var temp;
+
+		function countdown() {
+			seconds = document.getElementById('countdown').innerHTML;
+			seconds = parseInt(seconds, 10);
+
+			if (seconds == 1) {
+				solutionSection.addClass("open")
+			  	temp = document.getElementById('countdown');
+		  		temp.innerHTML = "0";
+		  		setTimeout(function() {
+					answerActivity.css({"opacity": "1"})
+				}, 500)
+
+		  	return;
+			}
+
+			seconds--;
+			temp = document.getElementById('countdown');
+			temp.innerHTML = seconds;
+			timeoutMyOswego = setTimeout(countdown, 1000);
+		} 
+
+		setTimeout(function() {
+			countdown();
+		}, 1000);
 	});
 </script>

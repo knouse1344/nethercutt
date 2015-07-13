@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-offset-2 col-md-8 ">
 					<% if signed_in? %>
-						<h4><b>Hello, <%= @user.name %>!</b> &ensp; <%= link_to "Log out", signout_path, method: "delete", class: 'login' %></h4><br>
+						<h4><b>Hello, <a href="/users/<%= @user.id %>/edit"><%= @user.name %>!</a></b> &ensp; <%= link_to "Log out", signout_path, method: "delete", class: 'login' %></h4><br>
 					<% end %>
 					<p>
 						<b>Welcome to the Nethercutt Foundation’s Civics Challenge.</b>  How much of the American Story do you know?  Let’s find out.

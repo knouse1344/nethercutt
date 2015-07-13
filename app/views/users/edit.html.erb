@@ -1,0 +1,49 @@
+<div id="signup">
+	<div class="container">
+		<div class="edit-container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="row">
+						<div class="col-sm-6 col-sm-offset-3">
+							<h4>Tell Us About You</h4><br>
+						</div>
+					</div>
+					<%= form_for(@user) do |f| %>
+						<%= render 'shared/error_messages', object: f.object %>
+
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-2">
+							  <%= f.label :name %>
+							  <%= f.text_field :name, class: "form-control" %>
+							</div>
+							<div class="col-sm-4">
+							  <%= f.label :gender %>
+							  <%= f.radio_button :gender, "Male", { class: "form-control" } %> Male
+							  <%= f.radio_button :gender, "Female", { class: "form-control" } %> Female
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+							  <%= f.label :password %>
+							  <%= f.password_field :password, class: "form-control" %>
+							</div>
+							<div class="col-sm-6 col-sm-offset-3">
+							  <%= f.label :password_confirmation, "Password Confirmation" %>
+							  <%= f.password_field :password_confirmation, class: "form-control" %>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<div class="button-container row">
+									<div class="col-sm-6"><%= f.submit "Create", class: "save button" %></div>
+									<div class="col-sm-6"><%= link_to 'Cancel', '/main/index', class: "cancel button" %></div>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
